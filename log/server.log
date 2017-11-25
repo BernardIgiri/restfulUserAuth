@@ -1,0 +1,54 @@
+{"time":"2017-11-24T21:27:41-05:00","level":"info","host":"localhost","port":8080,"message":"Starting server on host localhost and port 8080..."}
+{"time":"2017-11-24T21:30:40-05:00","level":"info","host":"localhost","port":8080,"message":"Server stopped."}
+{"time":"2017-11-24T21:30:46-05:00","level":"info","host":"localhost","port":8080,"message":"Starting server on host localhost and port 8080..."}
+{"time":"2017-11-24T21:31:38-05:00","level":"info","host":"localhost","port":8080,"message":"Server stopped."}
+{"time":"2017-11-24T21:31:42-05:00","level":"info","host":"localhost","port":8080,"message":"Starting server on host localhost and port 8080..."}
+{"time":"2017-11-24T21:39:34-05:00","level":"info","host":"localhost","port":8080,"message":"Server stopped."}
+{"time":"2017-11-24T21:39:37-05:00","level":"info","host":"localhost","port":8080,"message":"Starting server on host localhost and port 8080..."}
+{"time":"2017-11-24T21:44:15-05:00","level":"info","host":"localhost","port":8080,"message":"Server stopped."}
+{"time":"2017-11-24T21:44:18-05:00","level":"info","host":"localhost","port":8080,"message":"Starting server on host localhost and port 8080..."}
+{"time":"2017-11-24T21:44:26-05:00","level":"info","host":"localhost","port":8080,"ip":"127.0.0.1","user_agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36","req_id":"b8cdi2h5m6a0kuuns0c0","user":"current user","status":"ok","message":"Something happened"}
+{"time":"2017-11-24T21:44:26-05:00","level":"info","host":"localhost","port":8080,"ip":"127.0.0.1","user_agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36","req_id":"b8cdi2h5m6a0kuuns0c0","method":"GET","url":"/login","status":200,"size":745,"duration":0.226854}
+{"time":"2017-11-24T21:46:13-05:00","level":"info","host":"localhost","port":8080,"message":"Server stopped."}
+{"time":"2017-11-24T21:46:18-05:00","level":"info","host":"localhost","port":8080,"message":"Starting server on host localhost and port 8080..."}
+{"time":"2017-11-24T21:46:23-05:00","level":"info","host":"localhost","port":8080,"ip":"127.0.0.1","user_agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36","req_id":"b8cdivp5m6a0spg0h1rg","user":"current user","status":"ok","message":"Something happened"}
+{"time":"2017-11-24T21:46:23-05:00","level":"info","host":"localhost","port":8080,"ip":"127.0.0.1","user_agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36","req_id":"b8cdivp5m6a0spg0h1rg","method":"GET","url":"/login","status":200,"size":9,"duration":0.142499}
+{"time":"2017-11-24T21:50:35-05:00","level":"info","host":"localhost","port":8080,"message":"Server stopped."}
+{"time":"2017-11-24T21:50:41-05:00","level":"info","host":"localhost","port":8080,"message":"Starting server on host localhost and port 8080..."}
+{"time":"2017-11-24T21:50:47-05:00","level":"warn","host":"localhost","port":8080,"ip":"127.0.0.1","user_agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36","req_id":"b8cdl1p5m6a0vhc7ecfg","user":"current user","status":"ok","message":"Something happened"}
+{"time":"2017-11-24T21:50:47-05:00","level":"info","host":"localhost","port":8080,"ip":"127.0.0.1","user_agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36","req_id":"b8cdl1p5m6a0vhc7ecfg","method":"GET","url":"/login","status":200,"size":9,"duration":0.414633}
+{"time":"2017-11-24T22:00:13-05:00","level":"info","host":"localhost","port":8080,"message":"Server stopped."}
+{"time":"2017-11-24T22:00:17-05:00","level":"info","host":"localhost","port":8080,"message":"Starting server on host localhost and port 8080..."}
+{"time":"2017-11-24T22:00:24-05:00","level":"warn","host":"localhost","port":8080,"ip":"127.0.0.1","user_agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36","req_id":"b8cdpi15m6a166a9i090","user":"current user","status":"ok","message":"Something happened"}
+{"time":"2017-11-24T22:00:24-05:00","level":"info","host":"localhost","port":8080,"ip":"127.0.0.1","user_agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36","req_id":"b8cdpi15m6a166a9i090","method":"GET","url":"/login","status":200,"size":9,"duration":0.766257}
+{"time":"2017-11-24T22:06:34-05:00","level":"info","host":"localhost","port":8080,"message":"Server stopped."}
+{"time":"2017-11-24T22:06:39-05:00","level":"info","host":"localhost","port":8080,"message":"Starting server on host localhost and port 8080..."}
+{"time":"2017-11-24T22:06:47-05:00","level":"warn","host":"localhost","port":8080,"ip":"127.0.0.1","user_agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36","req_id":"b8cdshp5m6a1i0fv9l0g","user":"current user","status":"ok","message":"Something happened"}
+{"time":"2017-11-24T22:06:47-05:00","level":"info","host":"localhost","port":8080,"ip":"127.0.0.1","user_agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36","req_id":"b8cdshp5m6a1i0fv9l0g","method":"GET","url":"/login","status":200,"size":9,"duration":0.140897}
+{"time":"2017-11-24T22:09:42-05:00","level":"warn","host":"localhost","port":8080,"ip":"127.0.0.1","user_agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36","req_id":"b8cdtth5m6a1i0fv9l10","user":"current user","status":"ok","message":"Something happened"}
+{"time":"2017-11-24T22:09:42-05:00","level":"info","host":"localhost","port":8080,"ip":"127.0.0.1","user_agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36","req_id":"b8cdtth5m6a1i0fv9l10","method":"GET","url":"/login","status":200,"size":9,"duration":0.150697}
+{"time":"2017-11-24T22:09:52-05:00","level":"info","host":"localhost","port":8080,"message":"Server stopped."}
+{"time":"2017-11-24T22:09:56-05:00","level":"info","host":"localhost","port":8080,"message":"Starting server on host localhost and port 8080..."}
+{"time":"2017-11-24T22:10:06-05:00","level":"warn","host":"localhost","port":8080,"ip":"127.0.0.1","user_agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36","req_id":"b8cdu3h5m6a1j8pel0gg","user":"current user","status":"ok","message":"Something happened"}
+{"time":"2017-11-24T22:10:06-05:00","level":"info","host":"localhost","port":8080,"ip":"127.0.0.1","user_agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36","req_id":"b8cdu3h5m6a1j8pel0gg","method":"GET","url":"/login","status":200,"size":9,"duration":0.17818}
+{"time":"2017-11-24T22:11:19-05:00","level":"info","host":"localhost","port":8080,"message":"Server stopped."}
+{"time":"2017-11-24T22:11:21-05:00","level":"info","host":"localhost","port":8080,"message":"Starting server on host localhost and port 8080..."}
+{"time":"2017-11-24T22:11:29-05:00","level":"warn","host":"localhost","port":8080,"ip":"127.0.0.1","user_agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36","req_id":"b8cduo95m6a1mjhvvp50","user":"current user","status":"ok","message":"Something happened"}
+{"time":"2017-11-24T22:11:29-05:00","level":"info","host":"localhost","port":8080,"ip":"127.0.0.1","user_agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36","req_id":"b8cduo95m6a1mjhvvp50","method":"GET","url":"/login","status":200,"size":9,"duration":0.138866}
+{"time":"2017-11-24T22:12:09-05:00","level":"info","host":"localhost","port":8080,"message":"Server stopped."}
+{"time":"2017-11-24T22:13:35-05:00","level":"info","host":"localhost","port":8080,"message":"Starting server on host localhost and port 8080..."}
+{"time":"2017-11-24T22:13:41-05:00","level":"warn","host":"localhost","port":8080,"user":"current user","status":"ok","message":"Something happened"}
+{"time":"2017-11-24T22:13:41-05:00","level":"info","host":"localhost","port":8080,"method":"GET","url":"/login","status":200,"size":9,"duration":0.14067}
+{"time":"2017-11-24T22:16:39-05:00","level":"info","host":"localhost","port":8080,"message":"Server stopped."}
+{"time":"2017-11-24T22:16:43-05:00","level":"info","host":"localhost","port":8080,"message":"Starting server on host localhost and port 8080..."}
+{"time":"2017-11-24T22:16:49-05:00","level":"warn","host":"localhost","port":8080,"user":"current user","status":"ok","message":"Something happened"}
+{"time":"2017-11-24T22:16:49-05:00","level":"info","host":"localhost","port":8080,"method":"GET","url":"/login","status":200,"size":9,"duration":0.439199}
+{"time":"2017-11-24T22:18:32-05:00","level":"info","host":"localhost","port":8080,"message":"Server stopped."}
+{"time":"2017-11-24T22:18:36-05:00","level":"info","host":"localhost","port":8080,"message":"Starting server on host localhost and port 8080..."}
+{"time":"2017-11-24T22:18:40-05:00","level":"warn","host":"localhost","port":8080,"userAgent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36","user":"current user","status":"ok","message":"Something happened"}
+{"time":"2017-11-24T22:18:40-05:00","level":"info","host":"localhost","port":8080,"userAgent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36","method":"GET","url":"/login","status":200,"size":9,"duration":0.7017}
+{"time":"2017-11-24T22:22:05-05:00","level":"info","host":"localhost","port":8080,"message":"Server stopped."}
+{"time":"2017-11-24T22:22:08-05:00","level":"info","host":"localhost","port":8080,"message":"Starting server on host localhost and port 8080..."}
+{"time":"2017-11-24T22:22:15-05:00","level":"warn","host":"localhost","port":8080,"lang":"en-US,en;q=0.9","ip":"127.0.0.1","userAgent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36","requestId":"b8ce3pp5m6a28kulgp0g","user":"current user","status":"ok","message":"Something happened"}
+{"time":"2017-11-24T22:22:15-05:00","level":"info","host":"localhost","port":8080,"lang":"en-US,en;q=0.9","ip":"127.0.0.1","userAgent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36","requestId":"b8ce3pp5m6a28kulgp0g","method":"GET","url":"/login","status":200,"size":9,"duration":0.386938}
+{"time":"2017-11-24T22:48:57-05:00","level":"info","host":"localhost","port":8080,"message":"Server stopped."}

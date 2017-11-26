@@ -1,0 +1,23 @@
+{
+  "name": "ajaxapplication",
+  "version": "1.0.0",
+  "description": "Ajax Application for restfulUserAuth go language project.",
+  "main": "index.html",
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bernardigiri/restfulUserAuth.git"
+  },
+  "author": "Bernard Igiri",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bernardigiri/restfulUserAuth/issues"
+  },
+  "homepage": "https://github.com/bernardigiri/restfulUserAuth#readme",
+  "devDependencies": {
+    "jshint": "^2.9.5",
+    "node-sass": "^4.7.2"
+  }
+}

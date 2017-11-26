@@ -4,11 +4,17 @@
   "description": "Ajax Application for restfulUserAuth go language project.",
   "main": "index.html",
   "scripts": {
-    "test": "node test"
+    "test": "node test",
+    "jshint": "./node_modules/jshint/bin/jshint dev/js/application",
+    "sass": "./node_modules/node-sass/bin/node-sass dev/scss/ -o dev/css/ --source-map-contents",
+    "save": "npm run save-vendor-jquery && npm run save-vendor-purecss && npm run save-vendor-normalize",
+    "save-vendor-jquery": "mkdir -p dev/js/vendor/jquery/ && cp node_modules/jquery/dist/jquery.js dev/js/vendor/jquery/",
+    "save-vendor-normalize": "mkdir -p dev/scss/vendor/normalize/ && rsync -a --delete node_modules/normalize-scss/sass/* dev/scss/vendor/normalize/",
+    "save-vendor-purecss": "mkdir -p dev/scss/vendor/purecss/ && rsync -a --delete node_modules/purecss-sass/vendor/assets/stylesheets/* dev/scss/vendor/purecss/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bernardigiri/restfulUserAuth.git"
+    "url": "git+https://github.com/BernardIgiri/restfulUserAuth.git"
   },
   "author": "Bernard Igiri",
   "license": "MIT",
@@ -17,7 +23,12 @@
   },
   "homepage": "https://github.com/bernardigiri/restfulUserAuth#readme",
   "devDependencies": {
+    "jquery": "^3.2.1",
     "jshint": "^2.9.5",
     "node-sass": "^4.7.2"
+  },
+  "dependencies": {
+    "normalize-scss": "^7.0.0",
+    "purecss-sass": "^1.0.0"
   }
 }

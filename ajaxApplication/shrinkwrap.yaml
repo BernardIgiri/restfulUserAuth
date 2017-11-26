@@ -1,4 +1,8 @@
+dependencies:
+  normalize-scss: 7.0.0
+  purecss-sass: 1.0.0
 devDependencies:
+  jquery: 3.2.1
   jshint: 2.9.5
   node-sass: 4.7.2
 packages:
@@ -715,6 +719,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-R+Y/evVa+m+S4VAOaQ64uFKcCZo=
+  /jquery/3.2.1:
+    dev: true
+    resolution:
+      integrity: sha1-XE2d5lKvbNCncBVKYxu6ErAVx4c=
   /js-base64/2.3.2:
     dev: true
     resolution:
@@ -944,6 +952,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-9jjUFbTPfEy3R/ad/2oNbKtW9Hgovl5O1FvFWKkKblNXoN/Oou6+9+KKohPK13Yc3/TyunyWhJp6gvRNR/PPAw==
+  /normalize-scss/7.0.0:
+    dev: false
+    resolution:
+      integrity: sha1-kuqsZVTMN2M2wGaCoNaiCZu7CIk=
   /npmlog/4.1.2:
     dependencies:
       are-we-there-yet: 1.1.4
@@ -1070,6 +1082,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-wNWmOycYgArY4esPpSachN1BhF4=
+  /purecss-sass/1.0.0:
+    dev: false
+    resolution:
+      integrity: sha1-Y/oA1UQxExinYrxY0yjXBQm2OY8=
   /qs/6.3.2:
     dev: true
     engines:
@@ -1512,5 +1528,8 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 4
 shrinkwrapVersion: 3
 specifiers:
+  jquery: ^3.2.1
   jshint: ^2.9.5
   node-sass: ^4.7.2
+  normalize-scss: ^7.0.0
+  purecss-sass: ^1.0.0

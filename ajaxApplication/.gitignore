@@ -1,2 +1,5 @@
 release
 node_modules
+dev/js/vendor
+dev/scss/vendor
+dev/css

@@ -4,6 +4,7 @@ import (
 	"errors"
 	"io/ioutil"
 
+	"github.com/alexedwards/scs"
 	"github.com/bernardigiri/restfulUserAuth/encryption"
 	"github.com/justinas/alice"
 	"github.com/rs/zerolog"
@@ -17,6 +18,7 @@ type Application struct {
 		database   string
 		credential mgo.Credential
 	}
+	sessionMan *scs.Manager
 	Middleware alice.Chain
 	Logger     zerolog.Logger
 	http       struct {

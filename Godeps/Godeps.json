@@ -2,5 +2,118 @@
 	"ImportPath": "github.com/bernardigiri/restfulUserAuth",
 	"GoVersion": "go1.9",
 	"GodepVersion": "v79",
-	"Deps": []
+	"Deps": [
+		{
+			"ImportPath": "github.com/alexedwards/scs",
+			"Comment": "v1.1.0-6-g462b35a",
+			"Rev": "462b35a9661ea3b689311b488573b42520517b42"
+		},
+		{
+			"ImportPath": "github.com/alexedwards/scs/stores/cookiestore",
+			"Comment": "v1.1.0-6-g462b35a",
+			"Rev": "462b35a9661ea3b689311b488573b42520517b42"
+		},
+		{
+			"ImportPath": "github.com/bernardigiri/go-pkcs7",
+			"Comment": "v1.0.1",
+			"Rev": "709fead0acad5d065ddf664bffe0876e844a6052"
+		},
+		{
+			"ImportPath": "github.com/bernardigiri/httpServerBoilerplate/rest",
+			"Comment": "v0.2.0",
+			"Rev": "de1e5aad4a23f89d25c55adbfbe2bdcf48cf907a"
+		},
+		{
+			"ImportPath": "github.com/gorilla/mux",
+			"Comment": "v1.5.0-6-g7625a85",
+			"Rev": "7625a85c14e615274a4ee4bc8654f72310a563e4"
+		},
+		{
+			"ImportPath": "github.com/justinas/alice",
+			"Rev": "03f45bd4b7dad4734bc4620e46a35789349abb20"
+		},
+		{
+			"ImportPath": "github.com/justinas/nosurf",
+			"Rev": "7182011986c42c33f0a79fd4b07e41edc784532b"
+		},
+		{
+			"ImportPath": "github.com/rs/xid",
+			"Comment": "v1.1",
+			"Rev": "02dd45c33376f85d1064355dc790dcc4850596b1"
+		},
+		{
+			"ImportPath": "github.com/rs/zerolog",
+			"Comment": "v1.3.0-3-g9a65e7c",
+			"Rev": "9a65e7ccd2bad9082586a4de21f914648416c90f"
+		},
+		{
+			"ImportPath": "github.com/rs/zerolog/hlog",
+			"Comment": "v1.3.0-3-g9a65e7c",
+			"Rev": "9a65e7ccd2bad9082586a4de21f914648416c90f"
+		},
+		{
+			"ImportPath": "github.com/rs/zerolog/internal/json",
+			"Comment": "v1.3.0-3-g9a65e7c",
+			"Rev": "9a65e7ccd2bad9082586a4de21f914648416c90f"
+		},
+		{
+			"ImportPath": "github.com/rs/zerolog/log",
+			"Comment": "v1.3.0-3-g9a65e7c",
+			"Rev": "9a65e7ccd2bad9082586a4de21f914648416c90f"
+		},
+		{
+			"ImportPath": "github.com/zenazn/goji/web/mutil",
+			"Comment": "v1.0-2-gc05078c",
+			"Rev": "c05078ca81941f8e801bba3ddc0e6b86b7fdc893"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/bcrypt",
+			"Rev": "b080dc9a8c480b08e698fb1219160d598526310f"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/blowfish",
+			"Rev": "b080dc9a8c480b08e698fb1219160d598526310f"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/nacl/secretbox",
+			"Rev": "b080dc9a8c480b08e698fb1219160d598526310f"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/poly1305",
+			"Rev": "b080dc9a8c480b08e698fb1219160d598526310f"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/salsa20/salsa",
+			"Rev": "b080dc9a8c480b08e698fb1219160d598526310f"
+		},
+		{
+			"ImportPath": "gopkg.in/mgo.v2",
+			"Comment": "r2016.08.01-5-g3f83fa5",
+			"Rev": "3f83fa5005286a7fe593b055f0d7771a7dce4655"
+		},
+		{
+			"ImportPath": "gopkg.in/mgo.v2/bson",
+			"Comment": "r2016.08.01-5-g3f83fa5",
+			"Rev": "3f83fa5005286a7fe593b055f0d7771a7dce4655"
+		},
+		{
+			"ImportPath": "gopkg.in/mgo.v2/internal/json",
+			"Comment": "r2016.08.01-5-g3f83fa5",
+			"Rev": "3f83fa5005286a7fe593b055f0d7771a7dce4655"
+		},
+		{
+			"ImportPath": "gopkg.in/mgo.v2/internal/sasl",
+			"Comment": "r2016.08.01-5-g3f83fa5",
+			"Rev": "3f83fa5005286a7fe593b055f0d7771a7dce4655"
+		},
+		{
+			"ImportPath": "gopkg.in/mgo.v2/internal/scram",
+			"Comment": "r2016.08.01-5-g3f83fa5",
+			"Rev": "3f83fa5005286a7fe593b055f0d7771a7dce4655"
+		},
+		{
+			"ImportPath": "gopkg.in/yaml.v2",
+			"Rev": "eb3733d160e74a9c7e442f435eb3bea458e1d19f"
+		}
+	]
 }

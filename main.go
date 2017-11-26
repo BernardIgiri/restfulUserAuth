@@ -6,6 +6,7 @@ import (
 
 	"github.com/bernardigiri/restfulUserAuth/config"
 	"github.com/bernardigiri/restfulUserAuth/controller"
+	"github.com/bernardigiri/restfulUserAuth/model"
 	"github.com/gorilla/mux"
 )
 
@@ -16,6 +17,15 @@ func explainUsage() {
 }
 
 func main() {
+	user := model.User{}
+	const password = "somePasswordValue123#.*"
+
+	user.SetPassword(password)
+	_, err1 := user.Authenticate(password)
+	if err1 != nil {
+		fmt.Println(err1.Error())
+	}
+
 	if len(os.Args) < 2 {
 		os.Stderr.WriteString("Not enough arguments\n")
 		explainUsage()
@@ -40,7 +50,8 @@ func main() {
 		os.Exit(1)
 	}
 	router := mux.NewRouter()
-	controller.ConnectLoginRoutes(router, application)
+	controller.ConnectLoginRoutes(router, &application)
+	controller.ConnectStatusRoutes(router)
 	handler := application.Middleware.Then(router)
 	err = application.ListenAndServe(handler)
 	if err != nil {

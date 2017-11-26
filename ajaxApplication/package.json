@@ -4,13 +4,18 @@
   "description": "Ajax Application for restfulUserAuth go language project.",
   "main": "index.html",
   "scripts": {
-    "test": "node test",
+    "test": "",
+
+    "build": "pnpm run save && pnpm run sass && pnpm run jshint && pnpm run test",
     "jshint": "./node_modules/jshint/bin/jshint dev/js/application",
-    "sass": "./node_modules/node-sass/bin/node-sass dev/scss/ -o dev/css/ --source-map-contents",
-    "save": "npm run save-vendor-jquery && npm run save-vendor-purecss && npm run save-vendor-normalize",
-    "save-vendor-jquery": "mkdir -p dev/js/vendor/jquery/ && cp node_modules/jquery/dist/jquery.js dev/js/vendor/jquery/",
-    "save-vendor-normalize": "mkdir -p dev/scss/vendor/normalize/ && rsync -a --delete node_modules/normalize-scss/sass/* dev/scss/vendor/normalize/",
-    "save-vendor-purecss": "mkdir -p dev/scss/vendor/purecss/ && rsync -a --delete node_modules/purecss-sass/vendor/assets/stylesheets/* dev/scss/vendor/purecss/"
+    "jshint:watch": "node_modules/watch-cli/bin/watch -p \"dev/js/application/**/*.js\" -c \"pnpm run jshint\"",
+    "sass": "./node_modules/node-sass/bin/node-sass dev/sass/ -o dev/css/ --source-map-contents",
+    "sass:watch": "node_modules/watch-cli/bin/watch -p \"dev/sass/**/*.scss\" -c \"pnpm run sass\"",
+    "save": "pnpm run save:requirejs && pnpm run save:jquery && pnpm run save:purecss && pnpm run save:normalize",
+    "save:requirejs": "mkdir -p dev/js/vendor/requirejs/ && cp node_modules/requirejs/require.js dev/js/vendor/requirejs/require.js",
+    "save:jquery": "mkdir -p dev/js/vendor/jquery/ && cp node_modules/jquery/dist/jquery.js dev/js/vendor/jquery/",
+    "save:normalize": "mkdir -p dev/sass/vendor/normalize/ && rsync -a --delete node_modules/normalize-scss/sass/* dev/sass/vendor/normalize/",
+    "save:purecss": "mkdir -p dev/sass/vendor/purecss/ && rsync -a --delete node_modules/purecss-sass/vendor/assets/stylesheets/* dev/sass/vendor/purecss/"
   },
   "repository": {
     "type": "git",
@@ -25,7 +30,9 @@
   "devDependencies": {
     "jquery": "^3.2.1",
     "jshint": "^2.9.5",
-    "node-sass": "^4.7.2"
+    "node-sass": "^4.7.2",
+    "requirejs": "^2.3.5",
+    "watch-cli": "^0.2.3"
   },
   "dependencies": {
     "normalize-scss": "^7.0.0",

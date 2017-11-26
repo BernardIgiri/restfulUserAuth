@@ -5,6 +5,8 @@ devDependencies:
   jquery: 3.2.1
   jshint: 2.9.5
   node-sass: 4.7.2
+  requirejs: 2.3.5
+  watch-cli: 0.2.3
 packages:
   /abbrev/1.1.1:
     dev: true
@@ -31,6 +33,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-w7M6te42DYbg5ijwRorn7yfWVN8=
+  /ansi-styles/1.0.0:
+    dev: true
+    engines:
+      node: '>=0.8.0'
+    resolution:
+      integrity: sha1-yxAt8cVvUSPquLZ817mAJ6AnkXg=
   /ansi-styles/2.2.1:
     dev: true
     engines:
@@ -175,6 +183,16 @@ packages:
     dev: true
     resolution:
       integrity: sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=
+  /chalk/0.4.0:
+    dependencies:
+      ansi-styles: 1.0.0
+      has-color: 0.1.7
+      strip-ansi: 0.1.1
+    dev: true
+    engines:
+      node: '>=0.8.0'
+    resolution:
+      integrity: sha1-UZmj3c0MHv4jvAjBsCewYXbgxk8=
   /chalk/1.1.3:
     dependencies:
       ansi-styles: 2.2.1
@@ -446,6 +464,14 @@ packages:
     dev: true
     resolution:
       integrity: sha1-LANAXHU4w51+s3sxcCLjJfsBi/c=
+  /gaze/0.5.2:
+    dependencies:
+      globule: 0.1.0
+    dev: true
+    engines:
+      node: '>= 0.8.0'
+    resolution:
+      integrity: sha1-QLcJU30k0dRXZ9takIaJ3+aaxE8=
   /gaze/1.1.2:
     dependencies:
       globule: 1.2.0
@@ -480,6 +506,14 @@ packages:
     dev: true
     resolution:
       integrity: sha1-Xv+OPmhNVprkyysSgmBOi6YhSfo=
+  /glob/3.1.21:
+    dependencies:
+      graceful-fs: 1.2.3
+      inherits: 1.0.2
+      minimatch: 0.2.14
+    dev: true
+    resolution:
+      integrity: sha1-0p4KBV3qUTj00H7UDomC6DwgZs0=
   /glob/6.0.4:
     dependencies:
       inflight: 1.0.6
@@ -501,6 +535,16 @@ packages:
     dev: true
     resolution:
       integrity: sha512-MJTUg1kjuLeQCJ+ccE4Vpa6kKVXkPYJ2mOCQyUuKLcLQsdrMCpBPUi8qVE6+YuaJkozeA9NusTAw3hLr8Xe5EQ==
+  /globule/0.1.0:
+    dependencies:
+      glob: 3.1.21
+      lodash: 1.0.2
+      minimatch: 0.2.14
+    dev: true
+    engines:
+      node: '>= 0.8.0'
+    resolution:
+      integrity: sha1-2cjt3h2nnRJaFRt5UzuXhnY0auU=
   /globule/1.2.0:
     dependencies:
       glob: 7.1.2
@@ -511,6 +555,13 @@ packages:
       node: '>= 0.10'
     resolution:
       integrity: sha1-HcScaCLdnoovoAuiopUAboZkvQk=
+  /graceful-fs/1.2.3:
+    deprecated: graceful-fs v3.0.0 and before will fail on node releases >= v7.0. Please update to graceful-fs@^4.0.0 as soon as possible. Use 'npm ls graceful-fs' to find it in the tree.
+    dev: true
+    engines:
+      node: '>=0.4.0'
+    resolution:
+      integrity: sha1-FaSAaldUfLLS2/J/QuiajDRRs2Q=
   /graceful-fs/4.1.11:
     dev: true
     engines:
@@ -551,6 +602,18 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-NPUEnOHs3ysGSa8+8k5F7TVBbZE=
+  /has-color/0.1.7:
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-ZxRKUmDDT8PMpnfQQdr1L+e3iy8=
+  /has-flag/2.0.0:
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-6CB68cx7MNRGzHC3NLXovhj4jVE=
   /has-unicode/2.0.1:
     dev: true
     resolution:
@@ -644,6 +707,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-Sb1jMdfQLQwJvJEKEHW6gWW1bfk=
+  /inherits/1.0.2:
+    dev: true
+    resolution:
+      integrity: sha1-ykMJ2t7mtUzAuNJH6NfHoJdb3Js=
   /inherits/2.0.3:
     dev: true
     resolution:
@@ -806,6 +873,17 @@ packages:
     dev: true
     resolution:
       integrity: sha1-FQzwoWeR9ZA7iJHqsVRgknS96lU=
+  /lodash/1.0.2:
+    dev: true
+    engines:
+      '0': node
+      '1': rhino
+    resolution:
+      integrity: sha1-j1dWDIO1n8JwvT1WG2kAQ0MOJVE=
+  /lodash/3.10.1:
+    dev: true
+    resolution:
+      integrity: sha1-W/Rejkm6QYnhfUgnid/RW9FAt7Y=
   /lodash/3.7.0:
     dev: true
     resolution:
@@ -823,6 +901,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-W0b4AUft7leIcPCG0Eghz5mOVR8=
+  /lru-cache/2.7.3:
+    dev: true
+    resolution:
+      integrity: sha1-bUUk6LlV+V1PW1iFHOId1y+06VI=
   /lru-cache/4.1.1:
     dependencies:
       pseudomap: 1.0.2
@@ -867,6 +949,14 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-Cdejk/A+mVp5+K+Fe3Cp4KsWVXo=
+  /minimatch/0.2.14:
+    dependencies:
+      lru-cache: 2.7.3
+      sigmund: 1.0.1
+    deprecated: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+    dev: true
+    resolution:
+      integrity: sha1-x054BXT2PG+aCQ6Q775u9TpqdWo=
   /minimatch/3.0.4:
     dependencies:
       brace-expansion: 1.1.8
@@ -1221,6 +1311,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-l/cXtp1IeE9fUmpsWqj/3aBVpNE=
+  /requirejs/2.3.5:
+    dev: true
+    engines:
+      node: '>=0.4.0'
+    resolution:
+      integrity: sha512-svnO+aNcR/an9Dpi44C7KSAy5fFGLtmPbaaCeQaklUz8BQhS64tWWIIlvEA5jrWICzlO/X9KSzSeXFnZdBu8nw==
   /rimraf/2.6.2:
     dependencies:
       glob: 7.1.2
@@ -1265,6 +1361,10 @@ packages:
       node: '>=0.8.0'
     resolution:
       integrity: sha1-NZbmMHp4FUT1kfN9phg2DzHbV7E=
+  /sigmund/1.0.1:
+    dev: true
+    resolution:
+      integrity: sha1-P/IfGYytIXX587eBhT/ZTQ0ZtZA=
   /signal-exit/3.0.2:
     dev: true
     resolution:
@@ -1353,6 +1453,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-TkhM1N5aC7vuGORjB3EKioFiGHg=
+  /strip-ansi/0.1.1:
+    dev: true
+    engines:
+      node: '>=0.8.0'
+    resolution:
+      integrity: sha1-OeipjQRNFQZgq+SmgIrPcLt7yZE=
   /strip-ansi/3.0.1:
     dependencies:
       ansi-regex: 2.1.1
@@ -1389,6 +1495,14 @@ packages:
       node: '>=0.8.0'
     resolution:
       integrity: sha1-U10EXOa2Nj+kARcIRimZXp3zJMc=
+  /supports-color/4.5.0:
+    dependencies:
+      has-flag: 2.0.0
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-vnoN5ITexcXN34s9WRJQRJEvY1s=
   /tar/2.2.1:
     dependencies:
       block-stream: 0.0.9
@@ -1447,6 +1561,15 @@ packages:
     dev: true
     resolution:
       integrity: sha1-KAS6vnEq0zeUWaz74kdGqywwP7w=
+  /verbalize/0.1.2:
+    dependencies:
+      chalk: 0.4.0
+    dev: true
+    engines:
+      node: '>=0.10.0'
+      npm: '>=1.2.10'
+    resolution:
+      integrity: sha1-Fl/aRkAzFUj46ZCx1+FDletyAgc=
   /verror/1.10.0:
     dependencies:
       assert-plus: 1.0.0
@@ -1457,6 +1580,18 @@ packages:
       '0': node >=0.6.0
     resolution:
       integrity: sha1-OhBcoXBTr1XW4nDB+CiGguGNpAA=
+  /watch-cli/0.2.3:
+    dependencies:
+      gaze: 0.5.2
+      lodash: 3.10.1
+      minimist: 1.2.0
+      supports-color: 4.5.0
+      verbalize: 0.1.2
+    dev: true
+    engines:
+      node: '>=0.8'
+    resolution:
+      integrity: sha512-+g6n5J+jimY8hxcoHQaePPNnjmRux0nCN9BztkChx9mOas61rou3nXxTireuOMSPz7sIM7/vk6vG1f85h6Ob2A==
   /which-module/1.0.0:
     dev: true
     resolution:
@@ -1533,3 +1668,5 @@ specifiers:
   node-sass: ^4.7.2
   normalize-scss: ^7.0.0
   purecss-sass: ^1.0.0
+  requirejs: ^2.3.5
+  watch-cli: ^0.2.3

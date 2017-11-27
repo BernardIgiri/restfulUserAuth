@@ -1,5 +1,5 @@
 release
 node_modules
-dev/js/vendor
+dev/js/require.js
 dev/scss/vendor
 dev/css

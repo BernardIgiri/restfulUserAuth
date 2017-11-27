@@ -1,5 +1,6 @@
 dependencies:
   normalize-scss: 7.0.0
+  progressbar.js: 1.0.1
   purecss-sass: 1.0.0
 devDependencies:
   jquery: 3.2.1
@@ -1172,6 +1173,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-FQ4gt1ZZCtP5EJPyWk8q2L/zC6M=
+  /progressbar.js/1.0.1:
+    dependencies:
+      shifty: 1.5.4
+    dev: false
+    resolution:
+      integrity: sha1-9/v8GVJA/guzL2972y5/9ADqcfk=
   /pseudomap/1.0.2:
     dev: true
     resolution:
@@ -1369,6 +1376,10 @@ packages:
       node: '>=0.8.0'
     resolution:
       integrity: sha1-NZbmMHp4FUT1kfN9phg2DzHbV7E=
+  /shifty/1.5.4:
+    dev: false
+    resolution:
+      integrity: sha1-1DYvyRTdKA3fblIr5AiyEgMgg0Y=
   /sigmund/1.0.1:
     dev: true
     resolution:
@@ -1680,6 +1691,7 @@ specifiers:
   mustache: ^2.3.0
   node-sass: ^4.7.2
   normalize-scss: ^7.0.0
+  progressbar.js: ^1.0.1
   purecss-sass: ^1.0.0
   requirejs: ^2.3.5
   watch-cli: ^0.2.3

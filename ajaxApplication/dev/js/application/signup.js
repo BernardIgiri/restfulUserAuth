@@ -1,6 +1,8 @@
 /*jshint esversion: 6 */
 define(function (require) {
 	return function () {
+		const progressBar = require('progressbar');
+		const zxcvbn = require('zxcvbn');
 		const weakColor = [252, 91, 63];  // Red
 		const strongColor = [111, 213, 127];  // Green
 		const defaultColor = [204, 204, 204];
@@ -61,7 +63,6 @@ define(function (require) {
 			const result = zxcvbn(parts.password.val());
 			parts.strengthLabel.text(passwordGrades[result.score]);
 			let progress = result.score / 4;
-			inputLabel.dataset.info = passwordGrades[result.score];
 			if (progress === 0 && parts.password.val() > 0) {
 				progress = 0.1;
 			}
@@ -100,14 +101,14 @@ define(function (require) {
 			}
 		};
 		getParts();
-		validate();
-		const strengthBar = new ProgressBar.Line(parts.strengthBar, {
+		const strengthBar = new progressBar.Line(parts.strengthBar[0], {
 			color: '#ddd',
 			trailColor: '#f7f7f7',
 			duration: 1000,
 			easing: 'easeOut',
-			strokeWidth: 5
+			strokeWidth: 8
 		});
+		validate();
 		hidePasswordStrength();
 		parts.password.on('focus', showPasswordStrength);
 		parts.password.on('focus', showPasswordStrength);

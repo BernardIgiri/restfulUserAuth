@@ -4,9 +4,11 @@ dependencies:
 devDependencies:
   jquery: 3.2.1
   jshint: 2.9.5
+  mustache: 2.3.0
   node-sass: 4.7.2
   requirejs: 2.3.5
   watch-cli: 0.2.3
+  zxcvbn: 4.4.2
 packages:
   /abbrev/1.1.1:
     dev: true
@@ -977,6 +979,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
+  /mustache/2.3.0:
+    dev: true
+    engines:
+      npm: '>=1.4.0'
+    resolution:
+      integrity: sha1-QCj3d4sXcIpImTCm5SrDvKDaQdA=
   /nan/2.8.0:
     dev: true
     resolution:
@@ -1659,14 +1667,20 @@ packages:
     dev: true
     resolution:
       integrity: sha1-a6MY6xaWFyf10oT46gA+jWFU0Mg=
+  /zxcvbn/4.4.2:
+    dev: true
+    resolution:
+      integrity: sha1-KOwXzwl0PtyrBW3dixsGJizHPDA=
 registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 4
 shrinkwrapVersion: 3
 specifiers:
   jquery: ^3.2.1
   jshint: ^2.9.5
+  mustache: ^2.3.0
   node-sass: ^4.7.2
   normalize-scss: ^7.0.0
   purecss-sass: ^1.0.0
   requirejs: ^2.3.5
   watch-cli: ^0.2.3
+  zxcvbn: ^4.4.2

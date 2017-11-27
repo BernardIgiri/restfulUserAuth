@@ -1,0 +1,23 @@
+div.page.signup {
+	fieldset {
+		position: relative;
+		div.strengthBarContainer {
+			position: absolute;
+			top: 5px;
+			left: 5px;
+			width: 50px;
+			.strengthBar {
+				position: absolute;
+				top: 5px;
+				left: 5px;
+				width: 100%;
+			}
+			.strengthLabel {
+				position: absolute;
+				top: 5px;
+				left: 5px;
+				width: 100%;
+			}
+		}
+	}
+}

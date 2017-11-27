@@ -1,2 +1,7 @@
 @import 'vendor/normalize/normalize';
 @import 'vendor/purecss/purecss';
+@import 'pages/signup';
+
+div.page {
+	display: none;
+}

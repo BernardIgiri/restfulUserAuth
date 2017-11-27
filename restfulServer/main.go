@@ -51,6 +51,7 @@ func main() {
 	}
 	router := mux.NewRouter()
 	controller.ConnectLoginRoutes(router, &application)
+	controller.ConnectRegisterRoutes(router, &application)
 	controller.ConnectStatusRoutes(router)
 	handler := application.Middleware.Then(router)
 	err = application.ListenAndServe(handler)

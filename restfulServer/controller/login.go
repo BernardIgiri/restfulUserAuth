@@ -1,8 +1,6 @@
 package controller
 
 import (
-	"encoding/json"
-	"io/ioutil"
 	"net/http"
 
 	"github.com/alexedwards/scs"
@@ -22,28 +20,18 @@ func ConnectLoginRoutes(router *mux.Router, application *config.Application) (er
 	return
 }
 
-func getUserFromRequest(r *http.Request) (user *model.User, err error) {
-	body, err := ioutil.ReadAll(r.Body)
-	defer r.Body.Close()
-	if err != nil {
-		return
-	}
-	err = json.Unmarshal(body, user)
-	return
-}
-
 func loginEndpoint(sMan handlers.SessionManager, db *mgo.Database, w http.ResponseWriter, r *http.Request) {
-	userLogin, err := getUserFromRequest(r)
-	if err != nil {
-		responders.ReportBadParams(w, r, err)
-		return
-	}
-	user, err := dao.UserByLogin(userLogin.Login, db)
+	r.ParseForm()
+	var (
+		login    = r.Form.Get("login")
+		password = r.Form.Get("password")
+	)
+	user, err := dao.UserByLogin(login, db)
 	if err != nil {
 		responders.ReportDebugError(w, r, err, rest.ErrorNotAuthorized, "Could not find login")
 		return
 	}
-	match, err := user.Authenticate(userLogin.Password)
+	match, err := user.Authenticate(password)
 	if err != nil {
 		responders.ReportError(w, r, err, rest.ErrorNotAuthorized, "Error logging in")
 		return
@@ -60,6 +48,7 @@ func logoutEndpoint(user *model.User, session *scs.Session, db *mgo.Database, w 
 	err := session.Destroy(w)
 	if err != nil {
 		responders.ReportError(w, r, err, rest.ErrorInvalidSession, "Invalid session")
+		return
 	}
 	responders.ReportSuccess(w, r, true)
 }

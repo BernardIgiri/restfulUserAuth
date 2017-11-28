@@ -14,6 +14,11 @@
 			"Rev": "462b35a9661ea3b689311b488573b42520517b42"
 		},
 		{
+			"ImportPath": "github.com/asaskevich/govalidator",
+			"Comment": "v8-5-gf682aee",
+			"Rev": "f682aee18e37332521b3c3ef4cba9ddb9b516b09"
+		},
+		{
 			"ImportPath": "github.com/bernardigiri/go-pkcs7",
 			"Comment": "v1.0.1",
 			"Rev": "709fead0acad5d065ddf664bffe0876e844a6052"
@@ -29,12 +34,61 @@
 			"Rev": "7625a85c14e615274a4ee4bc8654f72310a563e4"
 		},
 		{
+			"ImportPath": "github.com/gorilla/schema",
+			"Rev": "e6c82218a8b3ed3cbeb5407429849c0b0b597d40"
+		},
+		{
 			"ImportPath": "github.com/justinas/alice",
 			"Rev": "03f45bd4b7dad4734bc4620e46a35789349abb20"
 		},
 		{
 			"ImportPath": "github.com/justinas/nosurf",
 			"Rev": "7182011986c42c33f0a79fd4b07e41edc784532b"
+		},
+		{
+			"ImportPath": "github.com/nbutton23/zxcvbn-go",
+			"Comment": "v0.1",
+			"Rev": "eafdab6b0663b4b528c35975c8b0e78be6e25261"
+		},
+		{
+			"ImportPath": "github.com/nbutton23/zxcvbn-go/adjacency",
+			"Comment": "v0.1",
+			"Rev": "eafdab6b0663b4b528c35975c8b0e78be6e25261"
+		},
+		{
+			"ImportPath": "github.com/nbutton23/zxcvbn-go/data",
+			"Comment": "v0.1",
+			"Rev": "eafdab6b0663b4b528c35975c8b0e78be6e25261"
+		},
+		{
+			"ImportPath": "github.com/nbutton23/zxcvbn-go/entropy",
+			"Comment": "v0.1",
+			"Rev": "eafdab6b0663b4b528c35975c8b0e78be6e25261"
+		},
+		{
+			"ImportPath": "github.com/nbutton23/zxcvbn-go/frequency",
+			"Comment": "v0.1",
+			"Rev": "eafdab6b0663b4b528c35975c8b0e78be6e25261"
+		},
+		{
+			"ImportPath": "github.com/nbutton23/zxcvbn-go/match",
+			"Comment": "v0.1",
+			"Rev": "eafdab6b0663b4b528c35975c8b0e78be6e25261"
+		},
+		{
+			"ImportPath": "github.com/nbutton23/zxcvbn-go/matching",
+			"Comment": "v0.1",
+			"Rev": "eafdab6b0663b4b528c35975c8b0e78be6e25261"
+		},
+		{
+			"ImportPath": "github.com/nbutton23/zxcvbn-go/scoring",
+			"Comment": "v0.1",
+			"Rev": "eafdab6b0663b4b528c35975c8b0e78be6e25261"
+		},
+		{
+			"ImportPath": "github.com/nbutton23/zxcvbn-go/utils/math",
+			"Comment": "v0.1",
+			"Rev": "eafdab6b0663b4b528c35975c8b0e78be6e25261"
 		},
 		{
 			"ImportPath": "github.com/rs/xid",

@@ -7,6 +7,7 @@ import (
 	"github.com/bernardigiri/restfulUserAuth/config"
 	"github.com/bernardigiri/restfulUserAuth/controller"
 	"github.com/bernardigiri/restfulUserAuth/model"
+	"github.com/bernardigiri/restfulUserAuth/validation"
 	"github.com/gorilla/mux"
 )
 
@@ -49,6 +50,7 @@ func main() {
 		os.Stderr.WriteString(msg)
 		os.Exit(1)
 	}
+	validation.RegisterAll()
 	router := mux.NewRouter()
 	controller.ConnectLoginRoutes(router, &application)
 	controller.ConnectRegisterRoutes(router, &application)

@@ -1,9 +1,10 @@
-FROM ubuntu:16.04
+FROM nginx:latest
 
 RUN mkdir /opt/app
 RUN mkdir /opt/app/log
 RUN mkdir /opt/app/config
 
+COPY nginx.conf /etc/nginx/nginx.conf
 COPY restfulUserAuth /opt/app/
 COPY start.sh /opt/app/
 

@@ -16,7 +16,7 @@ services:
                         - ./restfulServer/log:/opt/app/log
                         - ./restfulServer/configFiles:/opt/app/config
                 ports:
-                        - 9002:8080
+                        - 9002:80
                 links:
                         - mongodb
                 depends_on:
@@ -34,9 +34,9 @@ services:
                         - ./reverseProxy/log:/var/log/nginx
                 ports:
                         - 8080:80
-                links:
-                        - static-website
-                        - user-service
                 depends_on:
                         - static-website
                         - user-service
+                extra_hosts:
+                        - static-website:MY-IP-ADDRESS
+                        - user-service:MY-IP-ADDRESS

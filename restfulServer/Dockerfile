@@ -11,4 +11,5 @@ RUN chown application:application -R /opt/app/
 RUN chmod 0660 -R /opt/app/log
 RUN chmod 0400 -R /opt/app/config
 
-CMD ["su", "-", "application", "-c", "restfulUserAuth config/config.yaml"]
+CMD ["/bin/sh"]
+# CMD ["su", "-", "application", "-c", "/opt/app/restfulUserAuth /opt/app/config/config.yaml"]

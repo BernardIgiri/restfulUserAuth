@@ -4,9 +4,7 @@ services:
                 build: ajaxApplication
                 container_name: static-website
                 ports:
-                        - 8080:80
-                links:
-                        - user-service
+                        - 9001:80
                 depends_on:
                         - user-service
         user-service:
@@ -16,7 +14,7 @@ services:
                         - ./restfulServer/log:/opt/app/log
                         - ./restfulServer/configFiles:/opt/app/config
                 ports:
-                        - 8080:8080
+                        - 9002:8080
                 links:
                         - mongodb
                 depends_on:
@@ -27,3 +25,13 @@ services:
                 ports:
                         - 27017:27017
                 command: mongod --auth
+        proxy:
+                build: reverseProxy
+                container_name: reverseProxy
+                volumes:
+                        - ./reverseProxy/log:/var/log/nginx
+                ports:
+                        - 8080:80
+                depends_on:
+                        - static-website
+                        - user-service

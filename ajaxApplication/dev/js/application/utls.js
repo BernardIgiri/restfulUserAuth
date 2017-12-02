@@ -1,9 +1,8 @@
 /*jshint esversion: 6 */
-define(function (require) {
-	require('mustache');
+define(['jquery','mustache'], function ($, nustache) {
 	return {
 		renderHtml: function(selector, view) {
-			return Mustache.render($(selector).text(), view);
+			return nustache.render($(selector).text(), view);
 		},
 	};
 });

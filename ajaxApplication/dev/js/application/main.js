@@ -1,8 +1,5 @@
 /*jshint esversion: 6 */
-define(function (require) {
-	require('jquery');
-	let signup = require('application/signup');
-	let $ = jQuery;
+define(['jquery','application/signup'], function ($, signup) {
 	$("body > h1").text("Hello, world!");
 	signup();
 });

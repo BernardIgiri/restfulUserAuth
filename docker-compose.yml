@@ -1,0 +1,21 @@
+version: '3'
+services:
+        user-service:
+                build: .
+                container_name: "user-service"
+                image: ubuntu/latest
+                volumes:
+                        - restfulServer/log:/user/src/app/log
+                        - restfulServer/configFiles:/user/src/app/config
+                ports:
+                        - 8080:8080
+                links:
+                        - mongodb
+                depends_on:
+                        - mongodb
+        mongodb:
+                image: mongo:latest
+                container_name: "mongodb"
+                ports:
+                        - 27017:27017
+                command: mongod --auth

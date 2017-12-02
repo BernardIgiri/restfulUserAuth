@@ -7,24 +7,70 @@
 </head>
 <body>
 	<div class="page signup">
-		<form class="pure-form">
+		<form class="pure-form pure-form-aligned">
 			<fieldset>
-				<legend>Sign Up</legend>
-				<input name="email" type="email" placeholder="Email">
-				<input name="password" type="password" placeholder="Password">
+				<div class="pure-control-group">
+					<label for="signup_firstname">First Name</label>
+					<input id="signup_firstname" type="text" placeholder="First Name" required>
+				</div>
+
+				<div class="pure-control-group">
+					<label for="signup_lastname">Last Name</label>
+					<input id="signup_lastname" type="text" placeholder="Last Name" required>
+				</div>
+
+				<div class="pure-control-group">
+					<label for="signup_phonenumber">Mobile Phone</label>
+					<input id="signup_phonenumber" type="tel" placeholder="Mobile Phone">
+				</div>
+
+				<div class="pure-control-group">
+					<label for="signup_email">Email Address</label>
+					<input id="signup_email" type="email" placeholder="Email Address" required>
+				</div>
+
+				<div class="pure-control-group">
+					<label for="signup_login">Username</label>
+					<input id="signup_login" type="text" placeholder="Username" required>
+				</div>
+
+				<div class="pure-control-group">
+					<label for="signup_password">Password</label>
+					<input id="signup_password" type="password" placeholder="Password" required>
+				</div>
+
 				<div class="strengthBarContainer">
 					<div class="strengthBar"></div>
 					<div class="strengthLabel"></div>
 				</div>
-				<input name="confirm" type="password" placeholder="Confirm Password">
-				<button type="submit" class="pure-button pure-button-primary">Sign Up</button>
+
+				<div class="pure-control-group">
+					<label for="signup_confirm">Confrim Password</label>
+					<input id="signup_confirm" type="password" placeholder="Confirm Password" equalto="signup_password" required>
+				</div>
+
+				<div class="pure-controls">
+					<label for="signup_enable2fa" class="pure-checkbox">
+						<input id="signup_enable2fa" type="checkbox"> Enable 2 factor authentication using mobile phone texting
+					</label>
+
+					<label for="signup_sendnewsletter" class="pure-checkbox">
+						<input id="signup_sendnewsletter" type="checkbox"> Subscribe to newsletter
+					</label>
+
+					<label for="signup_terms" class="pure-checkbox">
+						<input id="signup_terms" type="checkbox" required> I've read the terms and conditions
+					</label>
+
+					<button type="submit" class="pure-button pure-button-primary">Submit</button>
+				</div>
 			</fieldset>
 		</form>
 	</div>
 	<div class="page login">
 		<form class="pure-form">
 			<fieldset>
-				<legend>A compact inline form</legend>
+				<legend>Login</legend>
 
 				<input type="email" placeholder="Email">
 				<input type="password" placeholder="Password">

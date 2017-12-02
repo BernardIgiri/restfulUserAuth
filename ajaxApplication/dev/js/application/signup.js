@@ -1,8 +1,7 @@
 /*jshint esversion: 6 */
-define(function (require) {
+define(['jquery', 'progressbar', 'zxcvbn', 'validate', 'application/validation'],
+function ($, progressBar, zxcvbn, jqvalidate, validation) {
 	return function () {
-		const progressBar = require('progressbar');
-		const zxcvbn = require('zxcvbn');
 		const weakColor = [252, 91, 63];  // Red
 		const strongColor = [111, 213, 127];  // Green
 		const defaultColor = [204, 204, 204];
@@ -14,11 +13,7 @@ define(function (require) {
 			3: 'Strong',
 			4: 'Very strong'
 		};
-		const validation = require('application/validation');
-		const $ = jQuery;
 		let parts = {};
-		let isPasswordValid = false;
-		let isValid = false;
 		const interpolateColor = function(rgbA, rgbB, value) {
 			let rDiff = rgbA[0] - rgbB[0];
 			let gDiff = rgbA[1] - rgbB[1];
@@ -40,24 +35,42 @@ define(function (require) {
 			parts = {
 				root: $("div.page.signup"),
 				form: $("div.page.signup form"),
-				email: $("div.page.signup [name='email']"),
-				password: $("div.page.signup [name='password']"),
+				firstname: $("#signup_firstname"),
+				lastname: $("#signup_lastname"),
+				phonenumber: $("#signup_phonenumber"),
+				login: $("#signup_login"),
+				email: $("#signup_email"),
+				password: $("#signup_password"),
+				confirm: $("#signup_confirm"),
+				enable2fa: $("#signup_enable2fa"),
+				sendnewsletter: $("#signup_sendnewsletter"),
+				terms: $("#signup_terms"),
 				strengthBarContainer: $("div.page.signup .strengthBarContainer"),
 				strengthBar: $("div.page.signup .strengthBar"),
 				strengthLabel: $("div.page.signup .strengthLabel"),
-				confirm: $("div.page.signup [name='confirm']"),
 				submit: $("div.page.signup [type='submit']"),
 				allFields: $("div.page.signup input"),
 			};
 		};
 		const getValues = function() {
-			return ['email','password','confirm'].map((k) => parts[k].val());
+			return [
+				'firstname',
+				'lastname',
+				'phonenumber',
+				'login',
+				'email',
+				'password',
+				'confirm',
+				'enable2fa',
+				'sendnewsletter',
+				'terms'
+				].map((k) => parts[k].val());
 		};
 		const showPasswordStrength = function(e) {
-			parts.strengthBarContainer.attr("visibility", "visible");
+			parts.strengthBarContainer.css("visibility", "visible");
 		};
 		const hidePasswordStrength = function(e) {
-			parts.strengthBarContainer.attr("visibility", "hidden");
+			parts.strengthBarContainer.css("visibility", "hidden");
 		};
 		const updateStrengthMeter = function() {
 			const result = zxcvbn(parts.password.val());
@@ -80,9 +93,8 @@ define(function (require) {
 					bar.path.setAttribute('stroke', state.color);
 				}
 			});
-			isPasswordValid = result.score >= minimumPasswordGrade;
 		};
-		const validate = function(e) {
+		/*const validate = function(e) {
 			updateStrengthMeter();
 			const values = getValues();
 			isValid = isPasswordValid &&
@@ -91,14 +103,14 @@ define(function (require) {
 				values[0].match(validation.email) !== null;
 			parts.submit.prop('disabled', !isValid);
 			console.log("isValid", isValid);
-		};
+		};*/
 		const submit = function(e) {
 			e.stopPropagation();
 			e.preventDefault();
-			if (isValid) {
+			//if (isValid) {
 				let values = getValues();
 				console.log(values);
-			}
+			//}
 		};
 		getParts();
 		const strengthBar = new progressBar.Line(parts.strengthBar[0], {
@@ -108,12 +120,12 @@ define(function (require) {
 			easing: 'easeOut',
 			strokeWidth: 8
 		});
-		validate();
 		hidePasswordStrength();
 		parts.password.on('focus', showPasswordStrength);
-		parts.password.on('focus', showPasswordStrength);
-		parts.allFields.on('input', validate);
+		parts.password.on('blur', hidePasswordStrength);
+		parts.password.on('input', updateStrengthMeter);
 		parts.form.on('submit', submit);
+		parts.form.validate();
 		parts.root.show();
 	};
 });

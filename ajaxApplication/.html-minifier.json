@@ -1,0 +1,13 @@
+{
+	"html5": true,
+	"minifyJS":true,
+	"minifyCSS":true,
+	"removeComments": true,
+	"removeTagWhitespace":true,
+	"trimCustomFragments":true,
+	"sortClassName":true,
+	"sortAttributes":true,
+	"collapseWhitespace":true,
+	"conservativeCollapse":true,
+	"collapseInlineTagWhitespace":true
+}

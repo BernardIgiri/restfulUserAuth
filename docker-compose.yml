@@ -1,12 +1,20 @@
 version: '3'
 services:
+        static-website:
+                build: ajaxApplication
+                container_name: static-website
+                ports:
+                        - 8080:80
+                links:
+                        - user-service
+                depends_on:
+                        - user-service
         user-service:
-                build: .
-                container_name: "user-service"
-                image: ubuntu/latest
+                build: restfulServer
+                container_name: user-service
                 volumes:
-                        - restfulServer/log:/user/src/app/log
-                        - restfulServer/configFiles:/user/src/app/config
+                        - ./restfulServer/log:/opt/app/log
+                        - ./restfulServer/configFiles:/opt/app/config
                 ports:
                         - 8080:8080
                 links:

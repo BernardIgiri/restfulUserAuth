@@ -1,10 +1,14 @@
-FROM ubuntu/latest
+FROM ubuntu:16.04
 
-COPY restfulUserAuth /usr/src/app/
+RUN mkdir /opt/app
+RUN mkdir /opt/app/log
+RUN mkdir /opt/app/config
+
+COPY restfulUserAuth /opt/app/
 
 RUN useradd -ms /bin/bash application
-RUN chown application:application -R /user/src/app/
-RUN chmod 0660 -R /user/src/app/log
-RUN chmod 0400 -R /user/src/app/config
+RUN chown application:application -R /opt/app/
+RUN chmod 0660 -R /opt/app/log
+RUN chmod 0400 -R /opt/app/config
 
-CMD ["sudo", "-u", "restfulUserAuth", "config/config.yaml"]
+CMD ["su", "-", "application", "-c", "restfulUserAuth config/config.yaml"]

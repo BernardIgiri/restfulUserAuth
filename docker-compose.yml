@@ -2,6 +2,7 @@ version: '3'
 services:
         static-website:
                 build: ajaxApplication
+                restart: always
                 container_name: static-website
                 ports:
                         - 9001:80
@@ -9,9 +10,10 @@ services:
                         - user-service
         user-service:
                 build: restfulServer
+                restart: always
                 container_name: user-service
-                environment:
-                        - LOCAL_USER_ID
+                env_file:
+                        - variables.env
                 volumes:
                         - ./restfulServer/log:/opt/app/log
                         - ./restfulServer/configFiles:/opt/app/config
@@ -29,6 +31,7 @@ services:
                 command: mongod --auth
         proxy:
                 build: reverseProxy
+                restart: always
                 container_name: reverseProxy
                 volumes:
                         - ./reverseProxy/log:/var/log/nginx
@@ -37,6 +40,3 @@ services:
                 depends_on:
                         - static-website
                         - user-service
-                extra_hosts:
-                        - static-website:MY-IP-ADDRESS
-                        - user-service:MY-IP-ADDRESS

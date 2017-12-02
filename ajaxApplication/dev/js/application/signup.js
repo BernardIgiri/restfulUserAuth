@@ -1,11 +1,10 @@
 /*jshint esversion: 6 */
-define(['jquery', 'progressbar', 'zxcvbn', 'validate', 'application/validation'],
-function ($, progressBar, zxcvbn, jqvalidate, validation) {
+define(['jquery', 'progressbar', 'zxcvbn', 'application/validation', 'application/formutils'],
+function ($, progressBar, zxcvbn, validation, formutils) {
 	return function () {
 		const weakColor = [252, 91, 63];  // Red
 		const strongColor = [111, 213, 127];  // Green
 		const defaultColor = [204, 204, 204];
-		const minimumPasswordGrade = 3;
 		const passwordGrades = {
 			0: 'Very weak',
 			1: 'Weak',
@@ -13,7 +12,7 @@ function ($, progressBar, zxcvbn, jqvalidate, validation) {
 			3: 'Strong',
 			4: 'Very strong'
 		};
-		let parts = {};
+		let els = {};
 		const interpolateColor = function(rgbA, rgbB, value) {
 			let rDiff = rgbA[0] - rgbB[0];
 			let gDiff = rgbA[1] - rgbB[1];
@@ -31,8 +30,8 @@ function ($, progressBar, zxcvbn, jqvalidate, validation) {
 		const barColor = function(progress) {
 			return interpolateColor(weakColor, strongColor, progress);
 		};
-		const getParts = function() {
-			parts = {
+		const getElements = function() {
+			els = {
 				root: $("div.page.signup"),
 				form: $("div.page.signup form"),
 				firstname: $("#signup_firstname"),
@@ -53,7 +52,7 @@ function ($, progressBar, zxcvbn, jqvalidate, validation) {
 			};
 		};
 		const getValues = function() {
-			return [
+			return formutils.serialize([
 				'firstname',
 				'lastname',
 				'phonenumber',
@@ -64,19 +63,20 @@ function ($, progressBar, zxcvbn, jqvalidate, validation) {
 				'enable2fa',
 				'sendnewsletter',
 				'terms'
-				].map((k) => parts[k].val());
+			], els);
 		};
 		const showPasswordStrength = function(e) {
-			parts.strengthBarContainer.css("visibility", "visible");
+			els.strengthBarContainer.css("visibility", "visible");
 		};
 		const hidePasswordStrength = function(e) {
-			parts.strengthBarContainer.css("visibility", "hidden");
+			els.strengthBarContainer.css("visibility", "hidden");
 		};
+		const getPasswordScore = ()=> zxcvbn(els.password.val()).score;
 		const updateStrengthMeter = function() {
-			const result = zxcvbn(parts.password.val());
-			parts.strengthLabel.text(passwordGrades[result.score]);
-			let progress = result.score / 4;
-			if (progress === 0 && parts.password.val() > 0) {
+			const score = getPasswordScore();
+			els.strengthLabel.text(passwordGrades[score]);
+			let progress = score / 4;
+			if (progress === 0 && els.password.val() > 0) {
 				progress = 0.1;
 			}
 			let startColor = +strengthBar.value().toFixed(3) === 0 ?
@@ -89,31 +89,46 @@ function ($, progressBar, zxcvbn, jqvalidate, validation) {
 				from: { color: startColor },
 				to: { color: endColor },
 				step: function(state, bar) {
-					//input.style.color = state.color;
+					els.password.css({ "color": state.color });
 					bar.path.setAttribute('stroke', state.color);
 				}
 			});
 		};
-		/*const validate = function(e) {
-			updateStrengthMeter();
-			const values = getValues();
-			isValid = isPasswordValid &&
-				values[1].length > 8 &&
-				values[1]===values[2] &&
-				values[0].match(validation.email) !== null;
-			parts.submit.prop('disabled', !isValid);
-			console.log("isValid", isValid);
-		};*/
 		const submit = function(e) {
 			e.stopPropagation();
 			e.preventDefault();
-			//if (isValid) {
+			if (els.form.valid()) {
 				let values = getValues();
 				console.log(values);
-			//}
+				var request = {
+					login: values[3],
+					password: values[5],
+					firstname: values[0],
+					lastname: values[1],
+					email: values[4],
+					phonenumber: values[2],
+					enable2fa: values[7],
+					sendNewsLetter: values[8],
+				};
+				$.ajax({
+					url: "rest/register",
+					method: "POST",
+					data: request,
+					dataType: 'json',
+					contentType: "application/json",
+					success: function(result, status, jqXHR) {
+						console.log('success', result);
+					},
+					error: function(jqXHR, textStatus, errorThrown) {
+						console.log('error', arguments);
+					}
+				});
+			}
 		};
-		getParts();
-		const strengthBar = new progressBar.Line(parts.strengthBar[0], {
+		getElements();
+		els.root.show();
+		getElements();
+		const strengthBar = new progressBar.Line(els.strengthBar[0], {
 			color: '#ddd',
 			trailColor: '#f7f7f7',
 			duration: 1000,
@@ -121,11 +136,11 @@ function ($, progressBar, zxcvbn, jqvalidate, validation) {
 			strokeWidth: 8
 		});
 		hidePasswordStrength();
-		parts.password.on('focus', showPasswordStrength);
-		parts.password.on('blur', hidePasswordStrength);
-		parts.password.on('input', updateStrengthMeter);
-		parts.form.on('submit', submit);
-		parts.form.validate();
-		parts.root.show();
+		els.password.on('focus', showPasswordStrength);
+		els.password.on('blur', hidePasswordStrength);
+		els.password.on('input', updateStrengthMeter);
+		els.form.on('submit', submit);
+		els.form.validate();
+		validation.enableLiveChecking(els.allFields, (isValid)=> els.submit.prop('disabled', !isValid));
 	};
 });

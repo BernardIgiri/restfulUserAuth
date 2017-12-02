@@ -15,6 +15,7 @@ devDependencies:
   mustache: 2.3.0
   node-sass: 4.7.2
   requirejs: 2.3.5
+  throttle-debounce: 1.0.1
   uglify-js: 3.2.0
   watch-cli: 0.2.3
   zxcvbn: 4.4.2
@@ -2338,6 +2339,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-jk0qJWwOIYXGsYrWlK7JaLg8sdE=
+  /throttle-debounce/1.0.1:
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-2tD+Ew+drzcZ/eoz3Dao5rp/MLU=
   /to-fast-properties/1.0.3:
     dev: true
     engines:
@@ -2554,6 +2561,7 @@ specifiers:
   progressbar.js: ^1.0.1
   purecss-sass: ^1.0.0
   requirejs: ^2.3.5
+  throttle-debounce: ^1.0.1
   uglify-js: ^3.2.0
   watch-cli: ^0.2.3
   zxcvbn: ^4.4.2

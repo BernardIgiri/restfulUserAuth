@@ -46,6 +46,7 @@
     "mustache": "^2.3.0",
     "node-sass": "^4.7.2",
     "requirejs": "^2.3.5",
+    "throttle-debounce": "^1.0.1",
     "uglify-js": "^3.2.0",
     "watch-cli": "^0.2.3",
     "zxcvbn": "^4.4.2"

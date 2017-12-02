@@ -21,7 +21,7 @@
 
 				<div class="pure-control-group">
 					<label for="signup_phonenumber">Mobile Phone</label>
-					<input id="signup_phonenumber" type="tel" placeholder="Mobile Phone">
+					<input id="signup_phonenumber" type="tel" placeholder="Mobile Phone" data-rule-phoneUS="true">
 				</div>
 
 				<div class="pure-control-group">
@@ -36,7 +36,7 @@
 
 				<div class="pure-control-group">
 					<label for="signup_password">Password</label>
-					<input id="signup_password" type="password" placeholder="Password" required>
+					<input id="signup_password" name="signup_password" type="password" placeholder="Password" data-rule-password-complexity="3" required>
 				</div>
 
 				<div class="strengthBarContainer">
@@ -46,20 +46,20 @@
 
 				<div class="pure-control-group">
 					<label for="signup_confirm">Confrim Password</label>
-					<input id="signup_confirm" type="password" placeholder="Confirm Password" equalto="signup_password" required>
+					<input id="signup_confirm" name="signup_confirm" type="password" placeholder="Confirm Password" equalto="#signup_password" required>
 				</div>
 
 				<div class="pure-controls">
 					<label for="signup_enable2fa" class="pure-checkbox">
-						<input id="signup_enable2fa" type="checkbox"> Enable 2 factor authentication using mobile phone texting
+						<input id="signup_enable2fa" type="checkbox" value="true"> Enable 2 factor authentication using mobile phone texting
 					</label>
 
 					<label for="signup_sendnewsletter" class="pure-checkbox">
-						<input id="signup_sendnewsletter" type="checkbox"> Subscribe to newsletter
+						<input id="signup_sendnewsletter" type="checkbox" value="true"> Subscribe to newsletter
 					</label>
 
 					<label for="signup_terms" class="pure-checkbox">
-						<input id="signup_terms" type="checkbox" required> I've read the terms and conditions
+						<input id="signup_terms" type="checkbox" value="true" required> I've read the terms and conditions
 					</label>
 
 					<button type="submit" class="pure-button pure-button-primary">Submit</button>

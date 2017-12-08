@@ -1,7 +1,6 @@
 package config
 
 import (
-	"fmt"
 	"strconv"
 	"time"
 
@@ -22,7 +21,6 @@ func (a *Application) GetDatabaseConnection() (database *mgo.Database, err error
 			Username: user,
 			Password: password,
 		}
-		fmt.Printf("%+v\n", mongoDBDialInfo)
 		session, err = mgo.DialWithInfo(mongoDBDialInfo)
 		if err != nil {
 			return

@@ -43,7 +43,7 @@ func ReportError(w http.ResponseWriter, r *http.Request, errorEvent error, error
 		Error().
 		Err(errorEvent).
 		Msg(message)
-	if err := rest.WriteJSONError(w, rest.ErrorNotAuthorized); err != nil {
+	if err := rest.WriteJSONError(w, errorName); err != nil {
 		ReportBrokenPipe(r, err)
 	}
 }

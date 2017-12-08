@@ -8,15 +8,16 @@ import (
 	"github.com/bernardigiri/restfulUserAuth/encryption"
 	"github.com/justinas/alice"
 	"github.com/rs/zerolog"
-	"gopkg.in/mgo.v2"
 	"gopkg.in/yaml.v2"
 )
 
 type Application struct {
 	db struct {
-		server     string
-		database   string
-		credential mgo.Credential
+		server   string
+		port     int
+		database string
+		username []byte
+		password []byte
 	}
 	sessionMan *scs.Manager
 	Middleware alice.Chain
@@ -30,6 +31,7 @@ type Application struct {
 type Config struct {
 	Db struct {
 		Server   string
+		Port     int
 		Database string
 		Username string
 		Password string

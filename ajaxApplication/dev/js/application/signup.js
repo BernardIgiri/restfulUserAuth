@@ -111,7 +111,7 @@ function ($, progressBar, zxcvbn, validation, formutils) {
 					sendNewsLetter: values[8],
 				};
 				$.ajax({
-					url: "rest/register",
+					url: "user/register",
 					method: "POST",
 					data: request,
 					dataType: 'json',

@@ -24,11 +24,14 @@ services:
                 depends_on:
                         - mongodb
         mongodb:
-                image: mongo:latest
+                image: mongo:3.4.2
                 container_name: "mongodb"
                 ports:
                         - 27017:27017
                 command: mongod --auth
+                environment:
+                        - MONGO_INITDB_ROOT_USERNAME=admin
+                        - MONGO_INITDB_ROOT_PASSWORD=defaultPassword
         proxy:
                 build: reverseProxy
                 restart: always

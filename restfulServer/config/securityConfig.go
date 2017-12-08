@@ -8,7 +8,6 @@ import (
 
 	"github.com/alexedwards/scs"
 	"github.com/bernardigiri/restfulUserAuth/model"
-	"github.com/justinas/nosurf"
 )
 
 // Configuration constants
@@ -17,7 +16,7 @@ const (
 )
 
 func loadSecurityConfig(application *Application, config Config) (err error) {
-	application.Middleware = application.Middleware.Append(nosurf.NewPure)
+	//application.Middleware = application.Middleware.Append(nosurf.NewPure)
 	sManKey := make([]byte, keyLength)
 	_, err = io.ReadFull(rand.Reader, sManKey)
 	if err != nil {

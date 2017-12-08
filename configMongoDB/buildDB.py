@@ -10,23 +10,29 @@ def getDecryptedValue(key, value):
 def getConfig():
 	key = None
 	config = None
-	with open('config.yaml.key', 'rb') as file:
+	with open('/root/config.yaml.key', 'rb') as file:
 		key=file.read()
 		file.close()
-	with open('config.yaml', 'r') as file:
+	with open('/root/config.yaml', 'r') as file:
 		config = yaml.safe_load(file)
 		file.close()
 	config['password'] = getDecryptedValue(key, config['password'])
 	createUser(config)
 
 def createUser(config):
+	print("Configuring database...")
 	client = pymongo.MongoClient(config['server'], config['port'])
-	client.admin.authenticate('admin', 'defaultPassword')
+	try:
+		client.admin.authenticate('admin', 'defaultPassword')
+	except:
+		print("Already configured!")
+		return
 	client.admin.add_user('admin', config['adminPassword'])
 	client.admin.logout()
 	client.admin.authenticate('admin', config['adminPassword'])
 	db = client[config['database']]
 	db.add_user(config['username'], config['password'], roles=[{'role':'readWrite','db':config['database']}])
 	db.logout()
+	print("Finished!")
 
 getConfig()

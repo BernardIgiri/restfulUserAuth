@@ -12,13 +12,6 @@ import (
 )
 
 type Application struct {
-	db struct {
-		server   string
-		port     int
-		database string
-		username []byte
-		password []byte
-	}
 	sessionMan *scs.Manager
 	Middleware alice.Chain
 	Logger     zerolog.Logger

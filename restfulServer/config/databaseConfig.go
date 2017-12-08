@@ -1,6 +1,7 @@
 package config
 
 import (
+	"fmt"
 	"strconv"
 	"time"
 
@@ -10,33 +11,25 @@ import (
 
 var session *mgo.Session
 
-func (a *Application) GetDatabaseConnection() (database *mgo.Database, err error) {
-	if session == nil {
-		user := string(a.db.username)
-		password := string(a.db.password)
-		mongoDBDialInfo := &mgo.DialInfo{
-			Addrs:    []string{a.db.server + ":" + strconv.Itoa(a.db.port)},
-			Timeout:  60 * time.Second,
-			Database: a.db.database,
-			Username: user,
-			Password: password,
-		}
-		session, err = mgo.DialWithInfo(mongoDBDialInfo)
-		if err != nil {
-			return
-		}
-		session.SetMode(mgo.Monotonic, true)
-	}
-	database = session.DB(a.db.database)
+func (a *Application) GetDatabaseConnection() (connection *mgo.Session, err error) {
+	connection = session.Copy()
 	return
 }
 
 func loadDatabaseConfig(application *Application, config Config, decrypter encryption.Decrypter) (err error) {
 	password, err := decrypter.Decrypt(config.Db.Password)
-	application.db.port = config.Db.Port
-	application.db.server = config.Db.Server
-	application.db.database = config.Db.Database
-	application.db.username = []byte(config.Db.Username)
-	application.db.password = []byte(password)
+	mongoDBDialInfo := &mgo.DialInfo{
+		Addrs:    []string{config.Db.Server + ":" + strconv.Itoa(config.Db.Port)},
+		Timeout:  2 * time.Minute,
+		Database: config.Db.Database,
+		Username: config.Db.Username,
+		Password: string(password),
+	}
+	session, err = mgo.DialWithInfo(mongoDBDialInfo)
+	if err != nil {
+		fmt.Printf("%+v\n", mongoDBDialInfo)
+		return
+	}
+	session.SetMode(mgo.Monotonic, true)
 	return
 }

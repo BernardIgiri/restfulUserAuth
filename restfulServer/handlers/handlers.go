@@ -12,47 +12,56 @@ import (
 	"gopkg.in/mgo.v2"
 )
 
-type SessionManager interface {
+// Controls application session
+type SessionModel interface {
 	StartSession(w http.ResponseWriter, r *http.Request, user *model.User) (session *scs.Session, err error)
 }
 
+// Modifies an http handler to take a database connection
 func WithDb(application *config.Application, fn func(*mgo.Database, http.ResponseWriter, *http.Request)) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		db, err := application.GetDatabaseConnection()
+		connection, err := application.GetDatabaseConnection()
+		defer connection.Close()
 		if err != nil {
 			responders.Report500(w, r, err, "Could not connect to database")
 			return
 		}
-		fn(db, w, r)
+		fn(connection.DB(""), w, r)
 	}
 }
 
-func WithSessionManager(application *config.Application, fn func(SessionManager, *mgo.Database, http.ResponseWriter, *http.Request)) http.HandlerFunc {
+// Modifies an http handler to take a session model and a database connection
+func WithSessionModel(application *config.Application, fn func(SessionModel, *mgo.Database, http.ResponseWriter, *http.Request)) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		db, err := application.GetDatabaseConnection()
+		connection, err := application.GetDatabaseConnection()
+		defer connection.Close()
 		if err != nil {
 			responders.Report500(w, r, err, "Could not connect to database")
 			return
 		}
-		fn(application, db, w, r)
+		fn(application, connection.DB(""), w, r)
 	}
 }
 
+// Modifies an http handler to take a session and a database connection
 func WithDbSession(application *config.Application, fn func(*scs.Session, *mgo.Database, http.ResponseWriter, *http.Request)) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		db, err := application.GetDatabaseConnection()
+		connection, err := application.GetDatabaseConnection()
+		defer connection.Close()
 		if err != nil {
 			responders.Report500(w, r, err, "Could not connect to database")
 			return
 		}
 		session := application.GetSession(r)
-		fn(session, db, w, r)
+		fn(session, connection.DB(""), w, r)
 	}
 }
 
+// Modifies an http handler to take an authenticated session and a database connection
 func WithRequiredLogin(application *config.Application, fn func(*model.User, *scs.Session, *mgo.Database, http.ResponseWriter, *http.Request)) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		db, err := application.GetDatabaseConnection()
+		connection, err := application.GetDatabaseConnection()
+		defer connection.Close()
 		if err != nil {
 			responders.Report500(w, r, err, "Could not connect to database")
 			return
@@ -63,11 +72,11 @@ func WithRequiredLogin(application *config.Application, fn func(*model.User, *sc
 			responders.ReportError(w, r, err, rest.ErrorNotAuthenticated, "User not attached to session")
 			return
 		}
-		user, err := dao.UserByLogin(login, db)
+		user, err := dao.UserByLogin(login, connection.DB(""))
 		if err != nil {
 			responders.ReportError(w, r, err, rest.ErrorNotAuthenticated, "Authenticated user not found")
 			return
 		}
-		fn(user, session, db, w, r)
+		fn(user, session, connection.DB(""), w, r)
 	}
 }

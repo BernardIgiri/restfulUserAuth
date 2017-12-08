@@ -15,12 +15,12 @@ import (
 )
 
 func ConnectLoginRoutes(router *mux.Router, application *config.Application) (err error) {
-	router.HandleFunc("/login", handlers.WithSessionManager(application, loginEndpoint)).Methods("POST")
+	router.HandleFunc("/login", handlers.WithSessionModel(application, loginEndpoint)).Methods("POST")
 	router.HandleFunc("/logout", handlers.WithRequiredLogin(application, logoutEndpoint)).Methods("POST")
 	return
 }
 
-func loginEndpoint(sMan handlers.SessionManager, db *mgo.Database, w http.ResponseWriter, r *http.Request) {
+func loginEndpoint(sessionModel handlers.SessionModel, db *mgo.Database, w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
 	var (
 		login    = r.Form.Get("login")
@@ -40,7 +40,7 @@ func loginEndpoint(sMan handlers.SessionManager, db *mgo.Database, w http.Respon
 		responders.ReportDebugError(w, r, err, rest.ErrorNotAuthorized, "Invalid password")
 		return
 	}
-	sMan.StartSession(w, r, user)
+	sessionModel.StartSession(w, r, user)
 	responders.ReportSuccess(w, r, true)
 }
 

@@ -17,12 +17,12 @@ const (
 
 func loadSecurityConfig(application *Application, config Config) (err error) {
 	//application.Middleware = application.Middleware.Append(nosurf.NewPure)
-	sManKey := make([]byte, keyLength)
-	_, err = io.ReadFull(rand.Reader, sManKey)
+	sessionKey := make([]byte, keyLength)
+	_, err = io.ReadFull(rand.Reader, sessionKey)
 	if err != nil {
 		return
 	}
-	application.sessionMan = scs.NewCookieManager(string(sManKey))
+	application.sessionMan = scs.NewCookieManager(string(sessionKey))
 	application.sessionMan.Lifetime(time.Hour)
 	application.sessionMan.Persist(false)
 	application.sessionMan.Secure(true)

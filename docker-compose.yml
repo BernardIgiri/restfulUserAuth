@@ -22,7 +22,7 @@ services:
                 links:
                         - mongodb
                 depends_on:
-                        - mongodb
+                        - config-mongo
         mongodb:
                 image: mongo:3.4.2
                 container_name: "mongodb"
@@ -32,6 +32,13 @@ services:
                 environment:
                         - MONGO_INITDB_ROOT_USERNAME=admin
                         - MONGO_INITDB_ROOT_PASSWORD=defaultPassword
+        config-mongo:
+                build: configMongoDB
+                container_name: "config-mongo"
+                links:
+                        - mongodb
+                depends_on:
+                        - mongodb
         proxy:
                 build: reverseProxy
                 restart: always

@@ -13,4 +13,4 @@ RUN chown application:application -R /opt/app/
 RUN chmod 0660 -R /opt/app/log
 RUN chmod 0400 -R /opt/app/config
 
-ENTRYPOINT ["sh", "/opt/app/start.sh"]
+ENTRYPOINT ["/opt/app/start.sh"]

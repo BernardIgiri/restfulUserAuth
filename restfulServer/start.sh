@@ -1,3 +1,4 @@
+#!/bin/sh
 set -e
 _term() {
 	echo "Caught signal!"

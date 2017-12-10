@@ -1,0 +1,5 @@
+FROM scratch
+
+COPY application application
+
+ENTRYPOINT ["./application", "/config/config.yaml"]

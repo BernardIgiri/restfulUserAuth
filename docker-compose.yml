@@ -9,16 +9,14 @@ services:
                 depends_on:
                         - user-service
         user-service:
-                build: restfulServer
+                image: restful-user-service:latest
                 restart: always
                 container_name: user-service
-                env_file:
-                        - variables.env
-                volumes:
-                        - ./restfulServer/log:/opt/app/log
-                        - ./restfulServer/configFiles:/opt/app/config
                 ports:
                         - 9002:80
+                volumes:
+                        - ./userService/log:/log
+                        - ./userService/configFiles:/config
                 links:
                         - mongodb
                 depends_on:

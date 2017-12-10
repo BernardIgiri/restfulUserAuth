@@ -7,7 +7,7 @@ build:
       artifacts:
         - /go/src/application/application
     production:
-      name: application:latest
+      name: restful-user-service:latest
       dockerfile: Dockerfile.production
       depends_on:
         - builder

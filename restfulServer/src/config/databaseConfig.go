@@ -1,11 +1,11 @@
 package config
 
 import (
-	"fmt"
 	"strconv"
 	"time"
 
 	"application/encryption"
+
 	"gopkg.in/mgo.v2"
 )
 
@@ -27,7 +27,6 @@ func loadDatabaseConfig(application *Application, config Config, decrypter encry
 	}
 	session, err = mgo.DialWithInfo(mongoDBDialInfo)
 	if err != nil {
-		fmt.Printf("%+v\n", mongoDBDialInfo)
 		return
 	}
 	session.SetMode(mgo.Monotonic, true)

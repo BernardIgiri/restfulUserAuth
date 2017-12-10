@@ -6,7 +6,6 @@ import (
 
 	"application/config"
 	"application/controller"
-	"application/model"
 	"application/validation"
 
 	"github.com/gorilla/mux"
@@ -19,15 +18,6 @@ func explainUsage() {
 }
 
 func main() {
-	user := model.User{}
-	const password = "somePasswordValue123#.*"
-
-	user.SetPassword(password)
-	_, err1 := user.Authenticate(password)
-	if err1 != nil {
-		fmt.Println(err1.Error())
-	}
-
 	if len(os.Args) < 2 {
 		os.Stderr.WriteString("Not enough arguments\n")
 		explainUsage()

@@ -4,8 +4,9 @@ RUN mkdir -p /go/src/application
 WORKDIR /go/src/application
 
 RUN go get github.com/tools/godep
-COPY src/* /go/src/application/
+COPY src /go/src/application
 
+RUN godep restore
 RUN godep save
 
 ENV CGO_ENABLED=0

@@ -4,8 +4,9 @@ import (
 	"errors"
 	"io/ioutil"
 
-	"github.com/alexedwards/scs"
 	"application/encryption"
+
+	"github.com/alexedwards/scs"
 	"github.com/justinas/alice"
 	"github.com/rs/zerolog"
 	"gopkg.in/yaml.v2"

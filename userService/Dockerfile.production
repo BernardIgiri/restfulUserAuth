@@ -2,4 +2,6 @@ FROM scratch
 
 COPY application application
 
+EXPOSE 8080
+
 ENTRYPOINT ["./application", "/config/config.yaml"]

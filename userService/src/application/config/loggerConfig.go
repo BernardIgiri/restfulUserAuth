@@ -26,7 +26,7 @@ func loadLoggerConfig(application *Application, config Config) (err error) {
 		zerolog.SetGlobalLevel(zerolog.WarnLevel)
 	}
 	errorlogFileHandler, err := os.OpenFile(config.Log.Path,
-		os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
+		os.O_RDWR|os.O_CREATE|os.O_APPEND, 0660)
 	if err != nil {
 		return err
 	}

@@ -2,7 +2,9 @@ package config
 
 import (
 	"errors"
+	"fmt"
 	"io/ioutil"
+	"os"
 
 	"application/encryption"
 
@@ -68,6 +70,7 @@ func LoadConfig(configPath, keyPath string) (application Application, err error)
 	err = loadLoggerConfig(&application, config)
 	if err != nil {
 		err = errors.New("logger config error: " + err.Error())
+		fmt.Fprintln(os.Stderr, err.Error())
 		return
 	}
 	err = loadDatabaseConfig(&application, config, decrypter)

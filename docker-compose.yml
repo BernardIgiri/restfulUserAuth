@@ -13,7 +13,7 @@ services:
                 restart: always
                 container_name: user-service
                 ports:
-                        - 9002:80
+                        - 9002:8080
                 volumes:
                         - ./userService/log:/log
                         - ./userService/configFiles:/config

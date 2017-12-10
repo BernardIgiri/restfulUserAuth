@@ -2,7 +2,11 @@
 
 ## Configuration
 
-Create a config.yaml file and use [cfgcrypt][29f7816d] to encrypt it.
+Create the following sub-folders:
+-   log
+-   configFiles
+
+Then edit `configFiles/config.yaml` file and use [cfgcrypt][29f7816d] to encrypt it.
 
 Example config file
 ```
@@ -17,7 +21,7 @@ log:
         level: defaultLogLevel
 http:
         hostname: localhost
-        port: 80
+        port: 8080
 ```
 
 ### Example configuration file

@@ -11,6 +11,7 @@ import (
 
 var session *mgo.Session
 
+// GetDatabaseConnection gets connection to database
 func (a *Application) GetDatabaseConnection() (connection *mgo.Session, err error) {
 	connection = session.Copy()
 	return
@@ -18,6 +19,9 @@ func (a *Application) GetDatabaseConnection() (connection *mgo.Session, err erro
 
 func loadDatabaseConfig(application *Application, config Config, decrypter encryption.Decrypter) (err error) {
 	password, err := decrypter.Decrypt(config.Db.Password)
+	if err != nil {
+		return
+	}
 	mongoDBDialInfo := &mgo.DialInfo{
 		Addrs:    []string{config.Db.Server + ":" + strconv.Itoa(config.Db.Port)},
 		Timeout:  2 * time.Minute,

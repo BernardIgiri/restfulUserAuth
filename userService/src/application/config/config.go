@@ -12,6 +12,7 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
+// Application properties of application
 type Application struct {
 	sessionMan *scs.Manager
 	Middleware alice.Chain
@@ -22,6 +23,7 @@ type Application struct {
 	}
 }
 
+// Config configuration file properties
 type Config struct {
 	Db struct {
 		Server   string
@@ -34,12 +36,13 @@ type Config struct {
 		Path  string
 		Level string
 	}
-	Http struct {
+	HTTP struct {
 		Hostname string
 		Port     int
 	}
 }
 
+// LoadConfig loads configuration file properties from configPath file and optional keyPath encryption key
 func LoadConfig(configPath, keyPath string) (application Application, err error) {
 	application = Application{}
 	config := Config{}
@@ -62,14 +65,14 @@ func LoadConfig(configPath, keyPath string) (application Application, err error)
 		return
 	}
 	decrypter := encryption.NewConfigDecrypter(key)
-	err = loadDatabaseConfig(&application, config, decrypter)
-	if err != nil {
-		err = errors.New("database config error: " + err.Error())
-		return
-	}
 	err = loadLoggerConfig(&application, config)
 	if err != nil {
 		err = errors.New("logger config error: " + err.Error())
+		return
+	}
+	err = loadDatabaseConfig(&application, config, decrypter)
+	if err != nil {
+		err = errors.New("database config error: " + err.Error())
 		return
 	}
 	err = loadSecurityConfig(&application, config)
@@ -77,6 +80,6 @@ func LoadConfig(configPath, keyPath string) (application Application, err error)
 		err = errors.New("security config error: " + err.Error())
 		return
 	}
-	err = loadHttpConfig(&application, config)
+	err = loadHTTPConfig(&application, config)
 	return
 }

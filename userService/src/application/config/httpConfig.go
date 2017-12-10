@@ -8,12 +8,13 @@ import (
 	"syscall"
 )
 
-func loadHttpConfig(application *Application, config Config) (err error) {
-	application.http.hostname = config.Http.Hostname
-	application.http.port = config.Http.Port
+func loadHTTPConfig(application *Application, config Config) (err error) {
+	application.http.hostname = config.HTTP.Hostname
+	application.http.port = config.HTTP.Port
 	return
 }
 
+// ListenAndServe starts http server with supplied handler
 func (application *Application) ListenAndServe(handler http.Handler) error {
 	addr := application.http.hostname + ":" +
 		strconv.Itoa(application.http.port)

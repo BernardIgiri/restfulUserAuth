@@ -32,8 +32,8 @@ func loadLoggerConfig(application *Application, config Config) (err error) {
 	}
 	application.Logger = zerolog.New(errorlogFileHandler).With().
 		Timestamp().
-		Str("host", config.Http.Hostname).
-		Int("port", config.Http.Port).
+		Str("host", config.HTTP.Hostname).
+		Int("port", config.HTTP.Port).
 		Logger()
 	m := application.Middleware
 	// Install the logger handler with default output on the console
@@ -58,7 +58,7 @@ func loadLoggerConfig(application *Application, config Config) (err error) {
 	return
 }
 
-// RefererHandler adds the request's header field as a field to the context's logger
+// HeaderHandler adds the request's header field as a field to the context's logger
 // using fieldKey as field key and headerField as the header field
 func HeaderHandler(fieldKey, headerField string) func(next http.Handler) http.Handler {
 	return func(next http.Handler) http.Handler {

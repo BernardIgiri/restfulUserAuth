@@ -48,6 +48,10 @@ http:
 
 `docker-compose up`
 
+## Development
+
+To add source to go path, `cd` to this folder and run `export GOPATH=$GOPATH:`pwd``
+
 [29f7816d]: https://github.com/BernardIgiri/cfgcrypt "Configuration file encryption utility"
 [8806988c]: https://docs.docker.com/compose/ "Docker Compose Utility"
 [337bc096]: https://docs.docker.com "Docker Paltform"

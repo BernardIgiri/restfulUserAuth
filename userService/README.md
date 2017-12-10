@@ -8,7 +8,7 @@ Create the following sub-folders:
 
 Then edit `configFiles/config.yaml` file and use [cfgcrypt][29f7816d] to encrypt it.
 
-Example config file
+### Example config file
 ```
 db:
         port: 27017
@@ -20,29 +20,14 @@ log:
         path: /log/server.log
         level: defaultLogLevel
 http:
-        hostname: localhost
-        port: 8080
+        hostname: '' # leave blank for production
+        port: 80
 ```
 
-### Example configuration file
-```
-db:
-        server: localhost
-        database: application
-        username: application
-        password: #{{somePassword}}#
-log:
-        path: log/server.log
-        level: info
-http:
-        hostname: localhost
-        port: 8080
-```
 ## Prerequisites
 -   [Docker][337bc096]
 -   [Docker Compose][8806988c]
 -   [Habitus][03481138]
-
 
 ## Build
 

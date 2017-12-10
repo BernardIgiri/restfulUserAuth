@@ -3,7 +3,7 @@ package validation_test
 import (
 	"testing"
 
-	"github.com/bernardigiri/restfulUserAuth/validation"
+	"application/validation"
 	"github.com/stretchr/testify/assert"
 )
 

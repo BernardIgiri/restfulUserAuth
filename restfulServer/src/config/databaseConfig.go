@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/bernardigiri/restfulUserAuth/encryption"
+	"application/encryption"
 	"gopkg.in/mgo.v2"
 )
 

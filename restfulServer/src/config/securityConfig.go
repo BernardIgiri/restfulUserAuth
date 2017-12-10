@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/alexedwards/scs"
-	"github.com/bernardigiri/restfulUserAuth/model"
+	"application/model"
 )
 
 // Configuration constants

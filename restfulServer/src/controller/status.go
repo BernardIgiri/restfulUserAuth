@@ -3,7 +3,7 @@ package controller
 import (
 	"net/http"
 
-	"github.com/bernardigiri/restfulUserAuth/responders"
+	"application/responders"
 	"github.com/gorilla/mux"
 )
 

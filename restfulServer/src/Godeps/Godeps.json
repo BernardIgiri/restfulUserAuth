@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/bernardigiri/restfulUserAuth",
+	"ImportPath": "application",
 	"GoVersion": "go1.9",
 	"GodepVersion": "v79",
 	"Deps": [
@@ -40,10 +40,6 @@
 		{
 			"ImportPath": "github.com/justinas/alice",
 			"Rev": "03f45bd4b7dad4734bc4620e46a35789349abb20"
-		},
-		{
-			"ImportPath": "github.com/justinas/nosurf",
-			"Rev": "7182011986c42c33f0a79fd4b07e41edc784532b"
 		},
 		{
 			"ImportPath": "github.com/nbutton23/zxcvbn-go",

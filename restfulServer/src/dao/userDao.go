@@ -1,7 +1,7 @@
 package dao
 
 import (
-	"github.com/bernardigiri/restfulUserAuth/model"
+	"application/model"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 )

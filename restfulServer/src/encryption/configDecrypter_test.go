@@ -3,7 +3,7 @@ package encryption_test
 import (
 	"testing"
 
-	"github.com/bernardigiri/restfulUserAuth/encryption"
+	"application/encryption"
 	"github.com/stretchr/testify/assert"
 )
 

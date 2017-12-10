@@ -4,10 +4,11 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/bernardigiri/restfulUserAuth/config"
-	"github.com/bernardigiri/restfulUserAuth/controller"
-	"github.com/bernardigiri/restfulUserAuth/model"
-	"github.com/bernardigiri/restfulUserAuth/validation"
+	"application/config"
+	"application/controller"
+	"application/model"
+	"application/validation"
+
 	"github.com/gorilla/mux"
 )
 

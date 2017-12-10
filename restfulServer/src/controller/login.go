@@ -5,11 +5,11 @@ import (
 
 	"github.com/alexedwards/scs"
 	"github.com/bernardigiri/httpServerBoilerplate/rest"
-	"github.com/bernardigiri/restfulUserAuth/config"
-	"github.com/bernardigiri/restfulUserAuth/dao"
-	"github.com/bernardigiri/restfulUserAuth/handlers"
-	"github.com/bernardigiri/restfulUserAuth/model"
-	"github.com/bernardigiri/restfulUserAuth/responders"
+	"application/config"
+	"application/dao"
+	"application/handlers"
+	"application/model"
+	"application/responders"
 	"github.com/gorilla/mux"
 	"gopkg.in/mgo.v2"
 )

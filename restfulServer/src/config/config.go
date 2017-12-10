@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 
 	"github.com/alexedwards/scs"
-	"github.com/bernardigiri/restfulUserAuth/encryption"
+	"application/encryption"
 	"github.com/justinas/alice"
 	"github.com/rs/zerolog"
 	"gopkg.in/yaml.v2"

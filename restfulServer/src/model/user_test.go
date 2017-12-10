@@ -3,7 +3,7 @@ package model_test
 import (
 	"testing"
 
-	"github.com/bernardigiri/restfulUserAuth/model"
+	"application/model"
 	"github.com/stretchr/testify/assert"
 )
 

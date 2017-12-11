@@ -3,7 +3,7 @@ services:
     application:
         image: restful-user-service:latest
         ports:
-            - 8080:80
+            - 8080:5000
         volumes:
             - ./log:/log
             - ./configFiles:/config

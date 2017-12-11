@@ -4,16 +4,14 @@ services:
                 build: ajaxApplication
                 restart: always
                 container_name: static-website
-                ports:
-                        - 9001:80
                 depends_on:
                         - user-service
+                environment:
+                       - NGINX_PORT=9000
         user-service:
                 image: restful-user-service:latest
                 restart: always
                 container_name: user-service
-                ports:
-                        - 9002:80
                 volumes:
                         - ./userService/log:/log
                         - ./userService/configFiles:/config
@@ -45,6 +43,9 @@ services:
                         - ./reverseProxy/log:/var/log/nginx
                 ports:
                         - 8080:80
+                links:
+                        - user-service
+                        - static-website
                 depends_on:
                         - static-website
                         - user-service

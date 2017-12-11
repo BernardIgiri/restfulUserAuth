@@ -21,7 +21,7 @@ log:
         level: defaultLogLevel
 http:
         hostname: '' # leave blank for production
-        port: 5000
+        port: 80
 ```
 
 ## Prerequisites

@@ -6,8 +6,6 @@ services:
                 container_name: static-website
                 depends_on:
                         - user-service
-                environment:
-                       - NGINX_PORT=9000
         user-service:
                 image: restful-user-service:latest
                 restart: always
@@ -18,6 +16,7 @@ services:
                 links:
                         - mongodb
                 depends_on:
+                        - mongodb
                         - config-mongo
         mongodb:
                 image: mongo:3.4.2

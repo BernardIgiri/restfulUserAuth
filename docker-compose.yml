@@ -1,7 +1,7 @@
 version: '3'
 services:
         static-website:
-                build: ajaxApplication
+                build: staticWebsite
                 restart: always
                 container_name: static-website
                 depends_on:

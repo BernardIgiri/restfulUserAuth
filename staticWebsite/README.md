@@ -1,4 +1,4 @@
-# AJAX Application
+# Static Website
 
 UI for user login demo
 

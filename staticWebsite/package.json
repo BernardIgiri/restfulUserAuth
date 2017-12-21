@@ -1,7 +1,7 @@
 {
-  "name": "ajaxapplication",
+  "name": "staticwebsite",
   "version": "1.0.0",
-  "description": "Ajax Application for restfulUserAuth go language project.",
+  "description": "Ajax Application for RESTful Use Authentication project.",
   "main": "index.html",
   "scripts": {
     "test": "mocha",

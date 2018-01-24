@@ -9,8 +9,7 @@ A demonstration of using Go language to create a secure RESTful webservice
 
 ## Build
 
--   Build ajaxApplication folder
--   Build userService folder
+-   Build staticWebsite folder
 -   run `docker-compose build`
 
 ## Run
